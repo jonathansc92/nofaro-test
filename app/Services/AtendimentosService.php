@@ -22,12 +22,12 @@ class AtendimentosService
 
     public function getAll()
     {
-        return $this->respository->all();
+        return $this->respository->with(['pets'])->all();
     }
 
     public function get($id)
     {
-        return $this->respository->find($id);
+        return $this->respository->with(['pets'])->find($id);
     }
 
     public function store(Request $request) 
